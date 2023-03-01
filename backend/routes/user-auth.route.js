@@ -59,7 +59,7 @@ userRouter.post("/login", async (req, res) => {
                     const normal_token = jwt.sign({ userID: checkExists._id }, SECRET_KEY, { expiresIn: "1h" });
                     const refresh_token = jwt.sign({ userID: checkExists._id }, SECRET_KEY, { expiresIn: "7d" });
                     res.cookie("normal_token", normal_token).cookie("refresh_token", refresh_token);
-                    res.status(200).json({ "msg": "Logged in successfully", "normal_token": normal_token, "refresh_token": refresh_token })
+                    res.status(200).json({ "msg": "Logged in successfully", "normal_token": normal_token, "refresh_token": refresh_token, "user": checkExists.fullName });
                 }
                 else {
                     res.status(401).json({ "msg": "Invalid credentials" });
