@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'Samarkan Normal';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Samarkan Normal'), url('../assets/font/SAMARN__.woff') format('woff');
+}
+
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: #2c3e50;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #2c3e50;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23929292' fill-opacity='0.06'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+p {
+    color: #fff;
+}
+
+.copyright-section{
+    border: 1px solid wheat;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0% auto;
+    padding: 0%;
+    font-size: 12px;
+}
+
+main {
+    /* border: 1px solid red; */
+    height: 100vh;
+    display: flex;
+    /* margin: auto; */
+    overflow-y: hidden;
+}
+
+.main-poetry-section{
+    width: 50%;
+    /* border: 1px solid red; */
+    /* margin: 500px auto; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 100px auto 30px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.main-poetry-section::-webkit-scrollbar, *::-webkit-scrollbar {
+    display: none;
+}
+
+.poetry-card{
+    /* border: 1px solid #ffffff3d; */
+    width: 80%;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #000 0px 3px 6px, #000 0px 3px 6px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+}
+
+.poetry-card>:nth-child(1){
+    /* border: 1px solid #fff; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    margin: 0%;
+}
+
+.poetry-card>:nth-child(1)>:nth-child(1){
+    width: 30px;
+    height: 30px;
+    background-color: #dfdfdf;
+    color: #2c3e50;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0%;
+}
+
+.poetry-card>:nth-child(2)>p{
+    /* border: 1px solid #fff; */
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0%;
+    padding: 0%;
+}
+
+.poetry-card>:nth-child(4){
+    /* border: 1px solid #fff; */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.poetry-card>:nth-child(4)>div{
+    /* border: 1px solid #ff0000; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.poetry-card>:nth-child(4)>div>p>span{
+    padding: 0px 5px;
+}
+
+.material-symbols-outlined{
+    color: #fff;
+}
+
+.poetry-card>:nth-child(4)>div:hover{
+    cursor: pointer;
+}
+
+.material-symbols-outlined:active {
+    color: #f39c12;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
