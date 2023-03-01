@@ -1,0 +1,54 @@
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #f39c12;
+    color: white;
+}
+
+.container {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.main-register, .main-login{
+    width: 20%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 8px 0px;
+    background-color: #2c3e50;
+}
+
+#message {
+    display: none;
+    /* background: #f1f1f1; */
+    color: #000;
+    border-radius: 5px;
+    position: relative;
+    padding: 0px 20px;
+    margin-top: 0;
+}
+
+#message p {
+    /* padding: 10px 35px; */
+    font-size: 15px;
+    margin: 0;
+    font-size: 500;
+}
+
+.valid {
+    color: rgb(0, 255, 0);
+}
+
+.invalid {
+    color: rgb(255, 255, 255);
+}
