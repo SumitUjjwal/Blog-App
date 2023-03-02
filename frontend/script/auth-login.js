@@ -2,7 +2,8 @@
 // const nav_login_btn = document.getElementById("nav-login");
 
 // const user = JSON.parse(localStorage.getItem("user"));
-
+let cookies = document.cookie;
+console.log(cookies);
 if(user){
     nav_login_btn.innerText = user;
     nav_reg_btn.innerText = "Log Out";
@@ -46,12 +47,14 @@ nav_login_btn.addEventListener("click", () => {
             if (response.user) {
                 // localStorage.setItem("token", response.normal_token);
                 // localStorage.setItem("user", JSON.stringify(response.user));
-                localStorage.setItem("user", JSON.stringify(response.user));
-                window.location.href = "./index.html";
+                // localStorage.setItem("user", JSON.stringify(response.user));
+                // window.location.href = "./index.html";
+                const token = Cookies.get();
+                console.log(token);
                 console.log("Success");
             }
             nav_login_btn.innerText = JSON.parse(localStorage.getItem("user"));
-            alert(response.msg);
+            // alert(response.msg);
         })
     }
     else{
