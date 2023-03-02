@@ -6,6 +6,7 @@ const cookie_parser = require("cookie-parser");
 
 // INTERNAL MODULES
 const { UserModel } = require("../models/user-auth.model");
+const { BlacklistModel } = require("../models/blacklist.model");
 
 // ENVIRONMENT VARIABLES
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -74,6 +75,31 @@ userRouter.post("/login", async (req, res) => {
         res.status(500).json({ "msg": "Internal Server Error", "error": error.message });
     }
 })
+
+// LOGOUT
+userRouter.post("/logout", async (req, res) => {
+    // const {token} = req.body;
+    const normal_token = req.cookies.normal_token;
+    try {
+        const isValid = jwt.verify(normal_token, SECRET_KEY, async (err, decoded) => {
+            if (err) {
+                res.status(401).json({ "msg": "Invalid token", "error": err.message });
+            }
+            else {
+                const token = await new BlacklistModel({ token: normal_token });
+                await token.save();
+                res.clearCookie("token");
+                res.status(200).json({ "msg": "Logged Out!" });
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ "msg": "Internal Server Error", "error": error.message });
+    }
+})
+
+// GENERATE NEW TOKEN
+
 
 module.exports = {
     userRouter

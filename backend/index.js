@@ -1,6 +1,7 @@
 // EXTERNAL MODULES
 const express = require("express");
 const cors = require("cors");
+const cookie_parser = require("cookie-parser");
 
 // ENVIRONMENT VARIABLES
 require("dotenv").config();
@@ -16,7 +17,7 @@ const {userRouter} = require("./routes/user-auth.route");
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+app.use(cookie_parser());
 app.get("/", (req, res) => {
     res.json({"msg": "Wecome to your blog"});
 })
