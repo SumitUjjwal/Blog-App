@@ -8,10 +8,10 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 
 // CONNECTION
-const {connection} = require("./config/db");
+const { connection } = require("./config/db");
 
 // ROUTERS
-const {userRouter} = require("./routes/user-auth.route");
+const { userRouter } = require("./routes/user-auth.route");
 
 // EXPRESS APPLICATION
 const app = express();
@@ -19,14 +19,14 @@ app.use(express.json());
 app.use(cors());
 app.use(cookie_parser());
 app.get("/", (req, res) => {
-    res.json({"msg": "Wecome to your blog"});
+    res.json({ "msg": "Wecome to your blog" });
 })
 
 app.use("/auth", userRouter);
 
 
 
-app.listen(PORT, async() => {
+app.listen(PORT, async () => {
     try {
         await connection;
         console.log("Connected to Database");

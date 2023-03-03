@@ -79,8 +79,9 @@ userRouter.post("/login", async (req, res) => {
 
 // LOGOUT
 userRouter.post("/logout", async (req, res) => {
-    // const {token} = req.body;
-    const normal_token = req.cookies.normal_token;
+    const normal_token = req.body.token;
+    console.log(normal_token);
+    // const normal_token = req.cookies.normal_token;
     try {
         const isValid = jwt.verify(normal_token, SECRET_KEY, async (err, decoded) => {
             if (err) {
