@@ -1,24 +1,29 @@
-// BASE URL
-const base_url = "http://localhost:8080";
+// // BASE URL
+// const base_url = "http://localhost:8080";
 
-// NAV ELEMENTS
-const nav_reg_btn = document.getElementById("nav-register");
-const nav_login_btn = document.getElementById("nav-login");
+// // NAV ELEMENTS
+// const nav_reg_btn = document.getElementById("nav-register");
+// const nav_login_btn = document.getElementById("nav-login");
 
-// MAIN BODY
-const main_body = document.getElementsByTagName("main")[0];
+// // MAIN BODY
+// const main_body = document.getElementsByTagName("main")[0];
 
-const user = JSON.parse(localStorage.getItem("user"));
+// const user = JSON.parse(localStorage.getItem("user"));
 
-if(user){
-    nav_login_btn.innerText = user;
+// if(user){
+//     nav_login_btn.innerText = user;
+//     nav_reg_btn.innerText = "Log Out";
+// }
+if(info){
+    nav_login_btn.innerText = info.user;
+    nav_login_btn.href = "./index.html";
     nav_reg_btn.innerText = "Log Out";
 }
 
 // adding event handlers for register button
 nav_reg_btn.addEventListener("click", () => {
 
-    if (!user) {
+    if (!info) {
         main_body.innerHTML = "";
         main_body.innerHTML = `
         <div id="main-register" class="main-register">
@@ -157,14 +162,14 @@ nav_reg_btn.addEventListener("click", () => {
             }
         }
     }
-    else{
-        localStorage.clear();
-        confirm("Are you sure?");
-        if(confirm){
-            alert("Logged out successfully");
-            window.location.href = "./index.html";
-        }
-    }
+    // else{
+    //     localStorage.clear();
+    //     confirm("Are you sure?");
+    //     if(confirm){
+    //         alert("Logged out successfully");
+    //         window.location.href = "./index.html";
+    //     }
+    // }
 
 })
 

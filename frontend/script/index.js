@@ -1,9 +1,20 @@
-// // BASE URL
-// const base_url = "http://localhost:8080";
+// BASE URL
+const base_url = "http://localhost:8080";
 
-// // NAV ELEMENTS
-// const nav_reg_btn = document.getElementById("nav-register");
-// const nav_login_btn = document.getElementById("nav-login");
+// NAV ELEMENTS
+const nav_reg_btn = document.getElementById("nav-register");
+const nav_login_btn = document.getElementById("nav-login");
+
+// MAIN BODY
+const main_body = document.getElementsByTagName("main")[0];
+const info = JSON.parse(localStorage.getItem("userInfo"));
+// const user = JSON.parse(localStorage.getItem("user"));
+
+if(info){
+    nav_login_btn.innerText = info.user;
+    nav_login_btn.href = "./index.html";
+    nav_reg_btn.innerText = "Log Out";
+}
 
 // // MAIN BODY
 // const main_body = document.getElementsByTagName("main")[0];
@@ -178,7 +189,7 @@
 
 const poetry_section = document.getElementById("main-poetry-section");
 poetry_section.innerHTML = "";
-for(let i=0;i<9;i++){
+for(let i=0;i<20;i++){
     poetry_section.innerHTML += `
     <div class="poetry-card">
                 <div>

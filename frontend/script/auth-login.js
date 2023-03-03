@@ -2,16 +2,19 @@
 // const nav_login_btn = document.getElementById("nav-login");
 
 // const user = JSON.parse(localStorage.getItem("user"));
-let cookies = document.cookie;
-console.log(cookies);
-if(user){
-    nav_login_btn.innerText = user;
+// const info = JSON.parse(localStorage.getItem("userInfo"));
+
+// let cookies = document.cookie;
+// console.log(cookies);
+if(info){
+    nav_login_btn.innerText = info.user;
+    nav_login_btn.href = "./index.html";
     nav_reg_btn.innerText = "Log Out";
 }
 
 // adding event handlers for login button
 nav_login_btn.addEventListener("click", () => {
-    if (!user) {
+    if (!info) {
         main_body.innerHTML = "";
         main_body.innerHTML = `
         <div id="main-login" class="main-login">
@@ -45,16 +48,17 @@ nav_login_btn.addEventListener("click", () => {
             console.log(response);
             document.getElementById("submit-btn").innerHTML = `Login`;
             if (response.user) {
-                // localStorage.setItem("token", response.normal_token);
+                localStorage.setItem("userInfo", JSON.stringify(response));
                 // localStorage.setItem("user", JSON.stringify(response.user));
                 // localStorage.setItem("user", JSON.stringify(response.user));
-                // window.location.href = "./index.html";
-                const token = Cookies.get();
-                console.log(token);
+                window.location.href = "./index.html";
+                // const token = Cookies.get();
+                // console.log(token);
+                
+                nav_login_btn.innerText = info.user;
                 console.log("Success");
             }
-            nav_login_btn.innerText = JSON.parse(localStorage.getItem("user"));
-            // alert(response.msg);
+            alert(response.msg);
         })
     }
     else{
