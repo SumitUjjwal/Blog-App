@@ -22,29 +22,32 @@ if(info){
 
 // adding event handlers for register button
 nav_reg_btn.addEventListener("click", () => {
-
+    const login_box = document.querySelector(".login-container");
+    const register_box = document.querySelector(".reg-container");
+    register_box.style.display = "block";
+    login_box.style.display = "none";
     if (!info) {
-        main_body.innerHTML = "";
-        main_body.innerHTML = `
-        <div id="main-register" class="main-register">
-            <p>Welcome to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
-            <form action="" id="form-register">
-                <input type="text" placeholder="Enter Your Name" id="input-name" class="input-name" required>
-                <input type="email" placeholder="Enter Your Email" id="input-email" class="input email" required>
-                <input type="password" placeholder="Password" id="input-password" class="input password" required>
-                <div id="message">
-                    <p id="letter" class="invalid"> • A <strong>lowercase</strong> letter</p>
-                    <p id="capital" class="invalid"> • An <strong>uppercase</strong> letter</p>
-                    <p id="number" class="invalid"> • A <strong>number</strong></p>
-                    <p id="splChar" class="invalid"> • A <strong>special character</strong></p>
-                    <p id="lengths" class="invalid"> • Minimum <strong>8 characters</strong></p>
-                </div>
-                <input type="password" placeholder="Confirm Password" id="input-conf-password" class="input-conf-password" required>
-                <button type="submit" id="submit-btn">Create an account</button>
-            </form>
-        </div>
+    //     main_body.innerHTML = "";
+    //     main_body.innerHTML = `
+    //     <div id="main-register" class="main-register">
+    //         <p>Welcome to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
+    //         <form action="" id="form-register">
+    //             <input type="text" placeholder="Enter Your Name" id="input-name" class="input-name" required>
+    //             <input type="email" placeholder="Enter Your Email" id="input-email" class="input email" required>
+    //             <input type="password" placeholder="Password" id="input-password" class="input password" required>
+    //             <div id="message">
+    //                 <p id="letter" class="invalid"> • A <strong>lowercase</strong> letter</p>
+    //                 <p id="capital" class="invalid"> • An <strong>uppercase</strong> letter</p>
+    //                 <p id="number" class="invalid"> • A <strong>number</strong></p>
+    //                 <p id="splChar" class="invalid"> • A <strong>special character</strong></p>
+    //                 <p id="lengths" class="invalid"> • Minimum <strong>8 characters</strong></p>
+    //             </div>
+    //             <input type="password" placeholder="Confirm Password" id="input-conf-password" class="input-conf-password" required>
+    //             <button type="submit" id="submit-btn">Create an account</button>
+    //         </form>
+    //     </div>
         
-    `;
+    // `;
 
         const form = document.getElementById("form-register");
         form.addEventListener("submit", async (event) => {
@@ -79,6 +82,7 @@ nav_reg_btn.addEventListener("click", () => {
                 let response = await request.json();
                 document.getElementById("submit-btn").innerHTML = `Create an account`;
                 alert(response.msg);
+                window.location.reload();
             }
 
         })
@@ -171,5 +175,6 @@ nav_reg_btn.addEventListener("click", () => {
     //     }
     // }
 
-})
+}
+)
 
