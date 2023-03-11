@@ -20,16 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-<!-- <style>
-    .material-symbols-outlined {
-        font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 48
-    }
-</style> -->
 
 <body>
     <nav>
@@ -45,16 +38,36 @@
         </div>
     </nav>
     <main>
-        <!-- <div id="main-register" class="main-register">
-            <form action="">
-                <input type="text" id="input-name" class="input-name" required>
-                <input type="text" id="input-email" class="input email">
-                <input type="password" id="input-password" class="input password">
-                <input type="password" id="input-conf-password" class="input-conf-password">
-                <input type="submit" value="Create an Account">
-                <button type="submit" id="submit-btn"></button>
-            </form>
-        </div> -->
+        <div class="reg-container">
+            <div id="main-register" class="main-register">
+                <p>Welcome to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
+                <form action="" id="form-register">
+                    <input type="text" placeholder="Enter Your Name" id="input-name" class="input-name" required>
+                    <input type="email" placeholder="Enter Your Email" id="input-email" class="input-email" required>
+                    <input type="password" placeholder="Password" id="input-password" class="input-password" required>
+                    <div id="message">
+                        <p id="letter" class="invalid"> • A <strong>lowercase</strong> letter</p>
+                        <p id="capital" class="invalid"> • An <strong>uppercase</strong> letter</p>
+                        <p id="number" class="invalid"> • A <strong>number</strong></p>
+                        <p id="splChar" class="invalid"> • A <strong>special character</strong></p>
+                        <p id="lengths" class="invalid"> • Minimum <strong>8 characters</strong></p>
+                    </div>
+                    <input type="password" placeholder="Confirm Password" id="input-conf-password"
+                        class="input-conf-password" required>
+                    <button type="submit" id="submit-btn">Create an account</button>
+                </form>
+            </div>
+        </div>
+        <div class="login-container">
+            <div id="main-login" class="main-login">
+                <p>Log in to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
+                <form action="" id="form-login">
+                    <input type="email" placeholder="Enter Your Email" id="login-email" class="input-email" required>
+                    <input type="password" placeholder="Password" id="login-password" class="input-password" required>
+                    <button type="submit" id="login-btn">Login</button>
+                </form>
+            </div>
+        </div>
         <div id="main-poetry-section" class="main-poetry-section">
             <div class="poetry-card">
                 <div>
@@ -90,6 +103,25 @@
             </div>
         </div>
     </main>
+    <div id="create-post" class="create-post">
+        <span class="material-symbols-outlined">
+            add
+        </span>
+    </div>
+    <!-- *************************************************** -->
+    <!-- <button id="popup-btn">Click me to open the popup!</button> -->
+    <div id="create-post-popup" class="create-post-popup">
+        <div id="popup" class="popup">
+            <h2>Create A Post</h2>
+            <form>
+                <input type="text" id="head" name="head" placeholder="Title">
+                <textarea name="body" id="body" placeholder="Body"></textarea>
+                <button type="submit">Post</button>
+            </form>
+            <button id="close-btn">Discard</button>
+        </div>
+    </div>
+    <!-- *********************************************** -->
     <section id="copyright" class="copyright-section">
         <p>Made with 🤍 by <a target="_blank" href="https://github.com/SumitUjjwal"><strong>Sumit
                     Ujjwal</strong></a></p>
@@ -101,4 +133,6 @@
 <script src="./script/auth-logout.js"></script>
 <script src="./script/auth-register.js"></script>
 <script src="./script/auth-login.js"></script>
+<script src="./script/create-post.js"></script>
+
 </html>
