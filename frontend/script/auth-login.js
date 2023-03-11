@@ -14,25 +14,30 @@ if(info){
 
 // adding event handlers for login button
 nav_login_btn.addEventListener("click", () => {
+    console.log("click");
+    const login_box = document.querySelector(".login-container");
+    const register_box = document.querySelector(".reg-container");
+    register_box.style.display = "none";
+    login_box.style.display = "block";
     if (!info) {
-        main_body.innerHTML = "";
-        main_body.innerHTML = `
-        <div id="main-login" class="main-login">
-            <p>Log in to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
-            <form action="" id="form-login">
-                <input type="email" placeholder="Enter Your Email" id="input-email" class="input-email" required>
-                <input type="password" placeholder="Password" id="input-password" class="input-password" required>
-                <button type="submit" id="submit-btn">Login</button>
-            </form>
-        </div>
-    `;
+    //     main_body.innerHTML = "";
+    //     main_body.innerHTML = `
+    //     <div id="main-login" class="main-login">
+    //         <p>Log in to <span class="nav-logo"><a href="./index.html">The Poets</a></span></p>
+    //         <form action="" id="form-login">
+    //             <input type="email" placeholder="Enter Your Email" id="input-email" class="input-email" required>
+    //             <input type="password" placeholder="Password" id="input-password" class="input-password" required>
+    //             <button type="submit" id="submit-btn">Login</button>
+    //         </form>
+    //     </div>
+    // `;
 
         const form = document.getElementById("form-login");
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
-            document.getElementById("submit-btn").innerHTML = `<i class="fa fa-spinner fa-spin"></i><span>Creating account</span>`;
-            const email = document.getElementById("input-email");
-            const password = document.getElementById("input-password");
+            document.getElementById("login-btn").innerHTML = `<i class="fa fa-spinner fa-spin"></i><span>Creating account</span>`;
+            const email = document.getElementById("login-email");
+            const password = document.getElementById("login-password");
             let userInfo = {
                 email: email.value,
                 password: password.value
