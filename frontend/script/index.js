@@ -1,5 +1,5 @@
 // BASE URL
-const base_url = "http://localhost:8080";
+const base_url = "http://localhost:2020";
 
 // NAV ELEMENTS
 const nav_reg_btn = document.getElementById("nav-register");
